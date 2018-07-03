@@ -1,0 +1,44 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+
+class NewToDo extends React.Component {
+
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            todoItemName: ''
+        }
+
+        this._addTodoHandler = this._addTodoHandler.bind(this);
+        this._onTodoItemNameChanged = this._onTodoItemNameChanged.bind(this);
+    }
+
+    _addTodoHandler() {
+        
+        //TODO DEĞERİ BOŞ OLMAMALI!
+
+        const { onTodoAdd } = this.props;
+        onTodoAdd(this.state.todoItemName);
+    }
+
+    _onTodoItemNameChanged(e) {
+        this.setState({ todoItemName: e.target.value });
+    }
+
+    render() {
+        return (
+            <div className="test">
+                <h1 className="main-title">ToDo App</h1>
+                To do item: <input className="input" type="text" placeholder="Type your task." value={this.state.todoItemName} onChange={this._onTodoItemNameChanged} /><br /><br />
+                <button className="button" type="button" onClick={this._addTodoHandler}>Add item</button>
+            </div>
+        )
+    }
+}
+
+NewToDo.propTypes = {
+    onTodoAdd: PropTypes.func.isRequired
+}
+
+export default NewToDo
