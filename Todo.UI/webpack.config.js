@@ -24,13 +24,14 @@ const config = {
                     {
                         loader: 'css-loader'
                     },
+                  
                     /*{
                         loader: 'sass-loader'
                     },
                     {
                         loader: 'sass-resources-loader',
                         options: {
-                            resources: require(path.join(process.cwd(), "src/sass/utils.js"))
+                            resourcess: require(path.join(process.cwd(), "src/sass/utils.js"))
                         }
                     }*/
                 ]
@@ -40,7 +41,8 @@ const config = {
                 use: {
                     loader: 'html-loader'
                 }
-            }
+            },
+            
         ]
     },
     plugins: [

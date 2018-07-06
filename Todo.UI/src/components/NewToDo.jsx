@@ -21,10 +21,12 @@ class NewToDo extends React.Component {
             if(!(this.state.todoItemName).match(myRe)){
                 const { onTodoAdd } = this.props;
                 onTodoAdd(this.state.todoItemName);
-                this.state.todoItemName == '';
+                this.setState({todoItemName: ''});
+                
             }
         
     }
+    
 
     _onTodoItemNameChanged(e) {
         this.setState({ todoItemName: e.target.value });
@@ -34,7 +36,8 @@ class NewToDo extends React.Component {
         return (
             <div className="test">
                 <h1 className="main-title">To Do App</h1>
-                To do item: <input className="input" type="text" placeholder="Type your task." value={this.state.todoItemName} onChange={this._onTodoItemNameChanged} /><br /><br />
+                <h2 className = "input-title">To do item</h2>
+                <input className="input" type="text" placeholder="Type your task." value={this.state.todoItemName} onChange={this._onTodoItemNameChanged} /><br /><br />
                 <button className="button" type="button" onClick={this._addTodoHandler}>Add item</button>
             </div>
         )

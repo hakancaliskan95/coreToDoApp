@@ -8,11 +8,11 @@ class ToDoList extends React.Component {
         const { todos } = this.props;
         // TODOITEM RENDER EDECEGI ELEMENTI PROP OLARAK ALMALI
         return (
-            <ol>
+            <ul>
                 {
                     todos.map((val, i) => <ToDoItem key={i} title={val.title} />)
                 }
-            </ol>
+            </ul>
         )
     }
 }

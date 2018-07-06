@@ -40,3 +40,32 @@
     opacity: 1;
     transition: 0s
 }
+
+.input {
+    width: 30%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: none;
+    background-color: #3CBC8D;
+    color: white;
+}
+
+.main-title{
+    color: rgb(76, 91, 175);
+    font-size: 30px;
+}
+ul{
+    background:  #3399ff;
+    padding: 20px;
+    width: 40%;
+}
+ul li{
+    background: #cce5ff;
+    margin: 5px;
+    width: 30%;
+}
+
+.input-title{
+    font-size: 15px;
+    margin: 20px 0;
+}
