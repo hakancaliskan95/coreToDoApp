@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import ToDoList from './components/ToDoList';
 import NewToDo from './components/NewToDo';
+import ToDoItem from './components/ToDoItem';
 
 class App extends React.Component {
 
@@ -17,11 +18,19 @@ class App extends React.Component {
     _onTodoAddHandler(todoName) {
 
         //AYNI TODO SADECE BİR KEZ EKLENMELİ!
+            const dupes = this.state.todos.filter(v =>{
+                return v.title === todoName;
+            });
 
-        let todos = this.state.todos;
-        todos.push({ id: 1, title: todoName });
-
-        this.setState({ todos });
+            if(dupes.length <= 0){
+                console.log("Bu kayıt yok");
+                let todos = this.state.todos;
+                todos.push({ id: 1, title: todoName });   
+                this.setState({ todos });   
+            }
+            else{
+                console.log("Bu kayıt var");
+            }
     }
 
     render() {

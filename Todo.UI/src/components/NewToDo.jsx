@@ -17,9 +17,13 @@ class NewToDo extends React.Component {
     _addTodoHandler() {
         
         //TODO DEĞERİ BOŞ OLMAMALI!
-
-        const { onTodoAdd } = this.props;
-        onTodoAdd(this.state.todoItemName);
+            let myRe = /^\s*$\s*/;
+            if(!(this.state.todoItemName).match(myRe)){
+                const { onTodoAdd } = this.props;
+                onTodoAdd(this.state.todoItemName);
+                this.state.todoItemName == '';
+            }
+        
     }
 
     _onTodoItemNameChanged(e) {
@@ -29,7 +33,7 @@ class NewToDo extends React.Component {
     render() {
         return (
             <div className="test">
-                <h1 className="main-title">ToDo App</h1>
+                <h1 className="main-title">To Do App</h1>
                 To do item: <input className="input" type="text" placeholder="Type your task." value={this.state.todoItemName} onChange={this._onTodoItemNameChanged} /><br /><br />
                 <button className="button" type="button" onClick={this._addTodoHandler}>Add item</button>
             </div>
