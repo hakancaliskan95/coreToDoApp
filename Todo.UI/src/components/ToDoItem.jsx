@@ -9,7 +9,7 @@ class ToDoItem extends React.Component {
 
     render() {
         const {title} = this.props;
-        return <li>{title}</li>;
+        return <li className = "todos-item">{title}</li>;
     }
 }
 
