@@ -11,14 +11,17 @@
     border-radius: 20px;
     font-size: 28px;
     color: #FFFFFF;
-    padding: 20px;
-    width: 180px;
+    padding: 10px;
+    width: 150px;
     text-align: center;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     text-decoration: none;
     overflow: hidden;
     cursor: pointer;
+}
+.button:hover{
+    width: 180px;
 }
 
 .button:after {
@@ -47,7 +50,7 @@
     border-top: 2px solid rgba(73, 204, 249, 1.0);
     border-bottom: 2px solid rgba(73, 204, 249, 1.0);
     margin-right: 10px;
-    padding: 5px;
+    padding: 10px;
     line-height: 17px;
     border-radius: 8px;
     width: 30%;
@@ -82,4 +85,8 @@ body{
 
 .todos-list{
     list-style-type: upper-roman;
+}
+
+.add-item{
+    font-size: 15px;
 }

@@ -44,7 +44,7 @@ class NewToDo extends React.Component {
                 <h1 className="main-title">To-Do App!</h1>
                 <h2 className = "input-title">Add New To-Do</h2>
                 <input className="input" type="text" placeholder="Type your task." value={this.state.todoItemName} onChange={this._onTodoItemNameChanged} onKeyPress={this._handleKeyPress} /><br /><br />
-                <button className="button" type="button" onClick={this._addTodoHandler}>Add item</button>
+                <button className="button" type="button" onClick={this._addTodoHandler}><h3 className="add-item">Add item</h3></button>
             </div>
             
         )
