@@ -12,6 +12,7 @@ class NewToDo extends React.Component {
 
         this._addTodoHandler = this._addTodoHandler.bind(this);
         this._onTodoItemNameChanged = this._onTodoItemNameChanged.bind(this);
+        this._handleKeyPress = this._handleKeyPress.bind(this);
     }
 
     _addTodoHandler() {
@@ -26,6 +27,11 @@ class NewToDo extends React.Component {
             }
         
     }
+   _handleKeyPress  (e)  {
+       if(e.keycode === 13 || e.which === 13){
+           this._addTodoHandler();
+       }
+   }
     
 
     _onTodoItemNameChanged(e) {
@@ -37,7 +43,7 @@ class NewToDo extends React.Component {
             <div className="test">
                 <h1 className="main-title">To-Do App!</h1>
                 <h2 className = "input-title">Add New To-Do</h2>
-                <input className="input" type="text" placeholder="Type your task." value={this.state.todoItemName} onChange={this._onTodoItemNameChanged} /><br /><br />
+                <input className="input" type="text" placeholder="Type your task." value={this.state.todoItemName} onChange={this._onTodoItemNameChanged} onKeyPress={this._handleKeyPress} /><br /><br />
                 <button className="button" type="button" onClick={this._addTodoHandler}>Add item</button>
             </div>
             
