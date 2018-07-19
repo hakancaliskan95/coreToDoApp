@@ -15,24 +15,26 @@ class NewToDo extends React.Component {
         this._handleKeyPress = this._handleKeyPress.bind(this);
     }
 
+
+
     _addTodoHandler() {
-        
+
         //TODO DEĞERİ BOŞ OLMAMALI!
-            let myRe = /^\s*$\s*/;
-            if(!(this.state.todoItemName).match(myRe)){
-                const { onTodoAdd } = this.props;
-                onTodoAdd(this.state.todoItemName);
-                this.setState({todoItemName: ''});
-                
-            }
-        
+        let myRe = /^\s*$\s*/;
+        if (!(this.state.todoItemName).match(myRe)) {
+            const { onTodoAdd } = this.props;
+            onTodoAdd(this.state.todoItemName);
+            this.setState({ todoItemName: '' });
+
+        }
+
     }
-   _handleKeyPress  (e)  {
-       if(e.keycode === 13 || e.which === 13){
-           this._addTodoHandler();
-       }
-   }
-    
+    _handleKeyPress(e) {
+        if (e.keycode === 13 || e.which === 13) {
+            this._addTodoHandler();
+        }
+    }
+
 
     _onTodoItemNameChanged(e) {
         this.setState({ todoItemName: e.target.value });
@@ -42,11 +44,10 @@ class NewToDo extends React.Component {
         return (
             <div className="test">
                 <h1 className="main-title">To-Do App!</h1>
-                <h2 className = "input-title">Add New To-Do</h2>
+                <h2 className="input-title">Add New To-Do</h2>
                 <input className="input" type="text" placeholder="Type your task." value={this.state.todoItemName} onChange={this._onTodoItemNameChanged} onKeyPress={this._handleKeyPress} /><br /><br />
                 <button className="button" type="button" onClick={this._addTodoHandler}><h3 className="add-item">Add item</h3></button>
             </div>
-            
         )
     }
 }
