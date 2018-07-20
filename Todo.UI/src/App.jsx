@@ -15,6 +15,7 @@ class App extends React.Component {
         this._onTodoAddHandler = this._onTodoAddHandler.bind(this);
         //this.removeItem = this.removeItem.bind(this);
         this.markTodoDone = this.markTodoDone.bind(this);
+    
 
     }
 
@@ -46,7 +47,7 @@ class App extends React.Component {
                 break;
             }
         }
-
+    
         this.setState({ todos: todoList });
 
         /* todoItems.splice(itemIndex, 1);
@@ -54,6 +55,7 @@ class App extends React.Component {
         todos.done ? todoItems.push(todo) : todoItems.unshift(todos);
         this.setState({ todoItems: todoItems }); */
     }
+
 
     // removeItem(index) {
 

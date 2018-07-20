@@ -64,6 +64,7 @@
   }
 .todos-item{
     background: white;
+    font-size: 20px;
     margin: 5px;
     width: 30%;
     padding: 10px;
@@ -94,3 +95,17 @@ body{
 .todos-item:hover {
     background-color: #F9F5F3;
     transform: translateY(-2px); }
+
+.done{
+    color: red;
+    text-decoration: line-through;
+}
+.undone{
+    color: #61DAFB;
+}
+
+.done-btn{
+    position: relative;
+    border-radius: 5px;
+    background-color: rgb(60, 158, 60);
+}

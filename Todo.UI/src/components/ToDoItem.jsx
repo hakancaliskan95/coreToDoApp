@@ -9,6 +9,7 @@ class ToDoItem extends React.Component {
     }
 
     markAsRead() {
+
         this.props.markTodoDone(this.props.title);
     }
 
@@ -16,9 +17,10 @@ class ToDoItem extends React.Component {
         const { title, isDone } = this.props;
         return (
             <li className="todos-item">
-                {title} - {isDone ? "YAPILMIŞ" : ''}
+                {title}  {isDone ? <div className="done">{title}</div> : ''}
+                
                 <a href="/#" onClick={this.markAsRead}>
-                    <span className="glyphicon gylphicon-ok icon">Yapıldı</span>
+                    <input type="button" value="✓" className="done-btn" />
                 </a>
             </li>
         );
