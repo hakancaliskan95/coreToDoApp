@@ -18,7 +18,7 @@ class ToDoItem extends React.Component {
         return (
             <li className="todos-item">
                 {title}  {isDone ? <div className="done">{title}</div> : ''}
-                
+             
                 <a href="/#" onClick={this.markAsRead}>
                     <input type="button" value="✓" className="done-btn" />
                 </a>

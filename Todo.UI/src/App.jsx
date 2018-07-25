@@ -9,13 +9,14 @@ class App extends React.Component {
         super(props)
 
         this.state = {
+            count: 0,
             todos: []
         }
 
         this._onTodoAddHandler = this._onTodoAddHandler.bind(this);
         //this.removeItem = this.removeItem.bind(this);
         this.markTodoDone = this.markTodoDone.bind(this);
-    
+
 
     }
 
@@ -31,8 +32,9 @@ class App extends React.Component {
         if (dupes.length <= 0) {
             console.log("Bu kayıt yok");
             let todos = this.state.todos;
+            const { count } = this.state;
             todos.push({ id: 1, title: todoName });
-            this.setState({ todos });
+            this.setState({ todos, count: count + 1 });
         }
         else {
             console.log("Bu kayıt var");
@@ -40,29 +42,20 @@ class App extends React.Component {
     }
 
     markTodoDone(title) {
-        const todoList = this.state.todos;
+        const { todos: todoList, count } = this.state;
         for (let i = 0; i < todoList.length; i++) {
             if (todoList[i].title === title) {
                 todoList[i].done = true;
                 break;
             }
         }
-    
-        this.setState({ todos: todoList });
 
-        /* todoItems.splice(itemIndex, 1);
-        todos.done = !todos.done;
-        todos.done ? todoItems.push(todo) : todoItems.unshift(todos);
-        this.setState({ todoItems: todoItems }); */
+        this.setState({ todos: todoList, count: count - 1 });
+
     }
 
 
-    // removeItem(index) {
 
-    //     this.setState({
-    //      data: this.state.data.filter((_, i) => i !== index)
-    //     });
-    //   }
 
     render() {
         return (
