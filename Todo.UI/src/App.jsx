@@ -30,7 +30,7 @@ class App extends React.Component {
         });
 
         if (dupes.length <= 0) {
-            console.log("Bu kayıt yok");
+            console.log("Bu kayıt yok" );
             let todos = this.state.todos;
             const { count } = this.state;
             todos.push({ id: 1, title: todoName });
