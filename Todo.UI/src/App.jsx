@@ -17,10 +17,7 @@ class App extends React.Component {
         //this.removeItem = this.removeItem.bind(this);
         this.markTodoDone = this.markTodoDone.bind(this);
 
-
     }
-
-
 
     _onTodoAddHandler(todoName) {
 
@@ -46,21 +43,20 @@ class App extends React.Component {
         for (let i = 0; i < todoList.length; i++) {
             if (todoList[i].title === title) {
                 todoList[i].done = true;
+                this.setState({count: this.state.count - 1})
+               
                 break;
             }
         }
-
-        this.setState({ todos: todoList, count: count - 1 });
+        console.log(count);
+        this.setState({ todos: todoList});
 
     }
-
-
-
 
     render() {
         return (
             <Fragment>
-                <NewToDo onTodoAdd={this._onTodoAddHandler} />
+                <NewToDo  onTodoAdd={this._onTodoAddHandler} count={this.state.count} />
                 <ToDoList todos={this.state.todos} markTodoDone={this.markTodoDone} />
             </Fragment>
         )
