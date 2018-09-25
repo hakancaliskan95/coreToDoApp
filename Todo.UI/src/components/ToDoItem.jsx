@@ -20,7 +20,7 @@ class ToDoItem extends React.Component {
                 {title}  {isDone ? <div className="done">{title}</div> : ''}
              
                 <a href="/#" onClick={this.markAsRead}>
-                    <input type="button" value="✓" className="done-btn" />
+                    <input type="button" disabled={isDone} value="✓" className="done-btn" />
                 </a>
             </li>
         );

@@ -9,7 +9,6 @@ class NewToDo extends React.Component {
         this.state = {
            // count: 0,
             todoItemName: ''
-            
         
         }
 
@@ -50,7 +49,7 @@ class NewToDo extends React.Component {
             <div className="test">
                 <h1 className="main-title">To-Do App!</h1>
                 <h2 className="input-title">Add New To-Do</h2>
-                <h3>Count: {this.props.count}</h3>
+                <h3>{this.props.count} items left</h3>
                 <input className="input" type="text" placeholder="Type your task." value={this.state.todoItemName} onChange={this._onTodoItemNameChanged} onKeyPress={this._handleKeyPress} /><br /><br />
                 <button className="button" type="button" onClick={this._addTodoHandler}><h3 className="add-item">Add item</h3></button>
             </div>

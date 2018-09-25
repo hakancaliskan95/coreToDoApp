@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 import ToDoList from './components/ToDoList';
 import NewToDo from './components/NewToDo';
-import ToDoItem from './components/ToDoItem';
 
 class App extends React.Component {
 
@@ -17,6 +16,11 @@ class App extends React.Component {
         //this.removeItem = this.removeItem.bind(this);
         this.markTodoDone = this.markTodoDone.bind(this);
 
+    }
+
+    componentDidMount() {
+        // data/todolist.json okunup oradaki todolar this.state.todos arrayine aktarılacak.
+        const filePath = 'data/todolist.json';
     }
 
     _onTodoAddHandler(todoName) {
@@ -43,8 +47,7 @@ class App extends React.Component {
         for (let i = 0; i < todoList.length; i++) {
             if (todoList[i].title === title) {
                 todoList[i].done = true;
-                this.setState({count: this.state.count - 1})
-               
+                this.setState({count: this.state.count - 1});
                 break;
             }
         }

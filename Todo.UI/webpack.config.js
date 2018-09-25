@@ -1,5 +1,6 @@
 const path = require("path");
 const htmlWebpackPlugin = require('html-webpack-plugin');
+const copyWebpackPlugin = require('copy-webpack-plugin');
 
 const config = {
     mode: 'development',
@@ -49,7 +50,11 @@ const config = {
         new htmlWebpackPlugin({
             template: './src/index.html',
             filename: './index.html'
-        })
+        }),
+        new copyWebpackPlugin([{
+            from: './src/data/*',
+            to: './data/[name].[ext]'
+        }])
     ]
 }
 
