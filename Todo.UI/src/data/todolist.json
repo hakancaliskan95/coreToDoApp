@@ -1,5 +1,8 @@
-﻿{
-  "id": "todo-1",
-  "title": "Yapılacak iş",
-  "isDone": false
+﻿ [
+   {
+   "id": "1",
+   "title": "Yapılacak iş",
+   "isDone": false
 }
+
+]

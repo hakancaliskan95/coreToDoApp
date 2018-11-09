@@ -16,6 +16,7 @@ const config = {
                     loader: 'babel-loader'
                 }
             },
+            
             {
                 test: /\.css$/,
                 use: [
@@ -45,6 +46,7 @@ const config = {
             },
             
         ]
+    
     },
     plugins: [
         new htmlWebpackPlugin({

@@ -16,8 +16,6 @@ class NewToDo extends React.Component {
         this._onTodoItemNameChanged = this._onTodoItemNameChanged.bind(this);
         this._handleKeyPress = this._handleKeyPress.bind(this);
     }
-
-
     
     _addTodoHandler() {
 
@@ -41,8 +39,6 @@ class NewToDo extends React.Component {
     _onTodoItemNameChanged(e) {
         this.setState({ todoItemName: e.target.value });
     }
-
-    
 
     render() {
         return (

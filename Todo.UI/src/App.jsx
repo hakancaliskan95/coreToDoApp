@@ -11,7 +11,7 @@ class App extends React.Component {
             count: 0,
             todos: []
         }
-
+ 
         this._onTodoAddHandler = this._onTodoAddHandler.bind(this);
         //this.removeItem = this.removeItem.bind(this);
         this.markTodoDone = this.markTodoDone.bind(this);
@@ -20,9 +20,14 @@ class App extends React.Component {
 
     componentDidMount() {
         // data/todolist.json okunup oradaki todolar this.state.todos arrayine aktarılacak.
-        const filePath = 'data/todolist.json';
+      const filePath = 'data/todolist.json';
+      fetch(filePath)
+      .then(res => res.json())
+      .then(data => {
+          this.setState({todos:data , count:data.length});
+      })
     }
-
+    
     _onTodoAddHandler(todoName) {
 
         //AYNI TODO SADECE BİR KEZ EKLENMELİ!
@@ -33,6 +38,7 @@ class App extends React.Component {
         if (dupes.length <= 0) {
             console.log("Bu kayıt yok" );
             let todos = this.state.todos;
+            console.log(todos);
             const { count } = this.state;
             todos.push({ id: 1, title: todoName });
             this.setState({ todos, count: count + 1 });
